@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+div{
+    position: relative;
+    z-index: 2;
+}
+
+body{
+    background-color: #333;
+    color: #333;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.footer {
+    width: 450px;
+    text-align: center;
+    display: block;
+    margin: 15px auto 30px auto;
+    color: #ffff;
+    font-size: 0.8rem;
+
+    a{
+        font-weight: 500;
+        color: #fff;
+    }
+}
+
+#wrapper{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+#wrapper::after{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 1000px;
+    height: 1000px;
+    border: 2px solid #fff;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    animation: rotate 10000ms linear infinite;
+
+    @keyframes rotate {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+}
+
+#wrapper::before{
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 1000px;
+    height: 1000px;
+    
+    border: 2px solid rgba(225,225,225,0.7);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+    animation: rotate_ 10000ms linear infinite;
+
+    @keyframes rotate_ {
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(-360deg);
+        }
+    }
+}
+
+
+
+#quote-box{
+    border-radius: 10px;
+    position: relative;
+    width: 450px;
+    padding: 40px 50px;
+    display: table;
+    background-color: #fff;
+    box-shadow:
+  3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+  8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+  17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+  36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+
+
+    .quote-text{
+        i{
+            font-size: 1em;
+            margin-right: 0.4em;
+        }
+        
+        text-align: center;
+        width: 450px;
+        height: auto;
+        clear: both;
+        font-weight: 500;
+        font-size: 1.75em; 
+    }
+
+    .quote-author{
+        width: 450px;
+        height: auto;
+        clear: both;
+        padding-top: 20px;
+        font-size: 1em;
+        text-align: right;
+
+    }
+    .buttons{
+        width: 450px;
+        margin: auto;
+        display: block;
+
+        .button{
+            height: 38px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #333;
+            outline: none;
+            font-size: 0.85em;
+            padding: 8px 18px 6px 18px;
+            margin-top: 30px;
+            opacity: 1;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            box-shadow:
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;
+
+
+            &:hover{
+                opacity: 0.9;
+                transform: scale(1.065);
+            }
+            
+            &#tweet-quote,
+            &#tumblr-quote{
+                float: left;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2em;
+                margin-right: 5px;
+                height: 30px;
+                width: 40px;
+            }
+
+            &#new-quote{
+                float: right;
+            }
+        }
+    }
+}
